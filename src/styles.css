@@ -1,0 +1,80 @@
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+form {
+  margin-bottom: 30px;
+  color: black;
+}
+
+header .city {
+  font-weight: 900;
+  font-size: 60px;
+  margin-top: 25px;
+}
+header .sub-heading {
+  opacity: 0.8;
+}
+header .weather-emoji {
+  font-size: 120px;
+  text-align: center;
+  margin-top: 20px;
+}
+section .current-temp {
+  font-size: 90px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  margin-top: -35px;
+  margin-bottom: 20px;
+}
+
+section .centigrade-fahrenheit {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+
+  font-weight: bold;
+  vertical-align: 200%;
+  color: white;
+}
+
+#centigrade,
+#fahrenheit {
+  color: white;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+#centigrade:hover,
+#fahrenheit:hover {
+  opacity: 0.8;
+}
+
+.weather-app {
+  background: linear-gradient(
+    225deg,
+    rgba(101, 227, 241, 0.509) 10%,
+    rgb(0, 172, 245) 100%
+  );
+  color: white;
+  margin: 30px auto;
+  width: 50%;
+  padding: 40px 40px;
+  border-radius: 20px;
+}
+.submit {
+  background-color: white;
+  border-radius: 60px;
+  border-color: 0;
+  border-style: outset;
+}
+.future-forecast {
+  text-align: center;
+  margin-top: 20px;
+}
+.day-forecast {
+  margin: auto 8px;
+  font-size: 18px;
+  font-weight: 800;
+}
+.day-forecast-emoji {
+  font-size: 45px;
+}
