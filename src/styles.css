@@ -49,14 +49,17 @@ section .centigrade-fahrenheit {
 }
 
 .weather-app {
+  box-sizing: content-box;
+  max-width: 100%;
+  width: 50%;
+  margin: 30px auto;
+
   background: linear-gradient(
     225deg,
     rgba(101, 227, 241, 0.509) 10%,
     rgb(0, 172, 245) 100%
   );
   color: white;
-  margin: 30px auto;
-  width: 50%;
   padding: 40px 40px;
   border-radius: 20px;
 }

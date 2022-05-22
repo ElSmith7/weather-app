@@ -13,10 +13,10 @@ function showDateAndTime(currentDateAndTime) {
   let hours = currentDateAndTime.getHours();
   let minutes = currentDateAndTime.getMinutes();
   if (hours < 10) {
-    let hours = `0${hours}`;
+    hours = `0${hours}`;
   }
   if (minutes < 10) {
-    let minutes = `0${minutes}`;
+    minutes = `0${minutes}`;
   }
   let time = `${hours}:${minutes}`;
   let DisplayDateAndTime = `${day} ${time}`;
