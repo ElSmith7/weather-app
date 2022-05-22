@@ -1,75 +1,65 @@
 body {
   font-family: "Josefin Sans", sans-serif;
 }
-form {
-  margin-bottom: 30px;
-  color: black;
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
 }
-
-header .city {
-  font-weight: 900;
-  font-size: 60px;
-  margin-top: 25px;
-}
-header .sub-heading {
-  opacity: 0.8;
-}
-header .weather-emoji {
-  font-size: 120px;
-  text-align: center;
-  margin-top: 20px;
-}
-section .current-temp {
-  font-size: 90px;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  margin-top: -35px;
-  margin-bottom: 20px;
-}
-
-section .centigrade-fahrenheit {
-  font-size: 18px;
-  font-family: "Josefin Sans", sans-serif;
-
-  font-weight: bold;
-  vertical-align: 200%;
-  color: white;
-}
-
-#centigrade,
-#fahrenheit {
-  color: white;
-  text-decoration: none;
-  transition: all 200ms ease-in-out;
-}
-
-#centigrade:hover,
-#fahrenheit:hover {
-  opacity: 0.8;
-}
-
 .weather-app {
-  box-sizing: content-box;
-  max-width: 100%;
-  width: 50%;
-  margin: 30px auto;
+  padding: 40px;
+  margin: 20px auto;
+  border-radius: 20px;
+  max-width: 600px;
+
   background: linear-gradient(
     225deg,
     rgba(101, 227, 241, 0.509) 10%,
     rgb(0, 172, 245) 100%
   );
   color: white;
-  padding: 40px 40px;
-  border-radius: 20px;
+}
+form {
+  margin-bottom: 30px;
+  color: black;
+}
+
+header .city {
+  margin-top: 25px;
+  font-weight: 900;
+  font-size: 60px;
+}
+header .sub-heading {
+  opacity: 0.8;
+}
+header .weather-emoji {
+  margin-top: 20px;
+  font-size: 120px;
+  text-align: center;
+}
+section .current-temp {
+  margin-top: -35px;
+  margin-bottom: 20px;
+  font-size: 90px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+section .centigrade-fahrenheit {
+  vertical-align: 200%;
+  color: white;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
 }
 .submit {
   background-color: white;
   border-radius: 60px;
   border-color: 0;
   border-style: outset;
-}
-#weather-description {
-  text-transform: capitalize;
 }
 .future-forecast {
   text-align: center;
@@ -82,4 +72,20 @@ section .centigrade-fahrenheit {
 }
 .day-forecast-emoji {
   font-size: 45px;
+}
+
+#weather-description {
+  text-transform: capitalize;
+}
+
+#centigrade,
+#fahrenheit {
+  color: white;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+#centigrade:hover,
+#fahrenheit:hover {
+  opacity: 0.8;
 }
