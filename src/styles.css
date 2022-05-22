@@ -55,6 +55,11 @@ section .centigrade-fahrenheit {
   font-family: "Josefin Sans", sans-serif;
   font-weight: bold;
 }
+section .current-conditions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .submit {
   background-color: white;
   border-radius: 60px;
