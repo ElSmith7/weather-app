@@ -28,7 +28,7 @@ function displayWeather(response) {
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
-
+  console.log(response.data.main.feels_like);
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
   );
