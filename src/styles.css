@@ -35,9 +35,12 @@ header .city {
 header .sub-heading {
   opacity: 0.8;
 }
-header .weather-emoji {
-  margin-top: 20px;
-  font-size: 120px;
+header #weather-icon {
+  display: block;
+  object-fit: contain;
+  margin: 20px auto;
+  max-width: 100%;
+  max-height: 100%;
   text-align: center;
 }
 section .current-temp {
