@@ -53,7 +53,6 @@ section .centigrade-fahrenheit {
   max-width: 100%;
   width: 50%;
   margin: 30px auto;
-
   background: linear-gradient(
     225deg,
     rgba(101, 227, 241, 0.509) 10%,
@@ -68,6 +67,9 @@ section .centigrade-fahrenheit {
   border-radius: 60px;
   border-color: 0;
   border-style: outset;
+}
+#weather-description {
+  text-transform: capitalize;
 }
 .future-forecast {
   text-align: center;
