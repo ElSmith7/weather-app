@@ -19,6 +19,12 @@ function formatDate(timeStamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
+  if (hours < 7 || hours > 20) {
+    let background = document.querySelector("#background");
+    background.classList.add("dark-mode");
+  }
+
   return `${day} ${hours}:${minutes}`;
 }
 

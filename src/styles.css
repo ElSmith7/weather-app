@@ -18,13 +18,20 @@ footer {
   margin: 20px auto;
   border-radius: 20px;
   max-width: 600px;
-
   background: linear-gradient(
     225deg,
     rgba(101, 227, 241, 0.509) 10%,
     rgb(0, 172, 245) 100%
   );
   color: white;
+}
+
+.dark-mode {
+  background: linear-gradient(
+    225deg,
+    rgba(60, 99, 120, 0.509) 10%,
+    rgb(11, 56, 86) 100%
+  );
 }
 .search-form {
   margin-bottom: 20px;
