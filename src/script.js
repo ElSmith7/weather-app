@@ -24,9 +24,8 @@ function showDateAndTime(currentDateAndTime) {
 
 function displayWeather(response) {
   document.querySelector(".city").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  centigrade = response.data.main.temp;
+  document.querySelector("#current-temp").innerHTML = Math.round(centigrade);
 
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
@@ -75,6 +74,16 @@ function findCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function findCentigrade(event) {
+  event.preventDefault();
+  document.querySelector("#current-temp").innerHTML = Math.round(centigrade);
+}
+function findFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheit = Math.round((centigrade * 9) / 5 + 32);
+  document.querySelector("#current-temp").innerHTML = fahrenheit;
+}
+
 let dayTime = document.querySelector("#time-date");
 dayTime.innerHTML = showDateAndTime(new Date());
 
@@ -83,5 +92,11 @@ searchForm.addEventListener("submit", cityFormSubmit);
 
 let nowWeatherButton = document.querySelector("#now-button");
 nowWeatherButton.addEventListener("click", findCurrentLocation);
+
+let centigrade = null;
+let centigradeLink = document.querySelector("#centigrade");
+let fahrenheitLink = document.querySelector("#fahrenheit");
+centigradeLink.addEventListener("click", findCentigrade);
+fahrenheitLink.addEventListener("click", findFahrenheit);
 
 searchCity(`London`);
