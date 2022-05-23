@@ -27,6 +27,9 @@ function displayWeather(response) {
   centigrade = response.data.main.temp;
   document.querySelector("#current-temp").innerHTML = Math.round(centigrade);
 
+  feelsLikeCentigrade = response.data.main.feels_like;
+  document.querySelector("#feels-like").innerHTML =
+    Math.round(feelsLikeCentigrade);
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
   );
@@ -79,13 +82,17 @@ function findCentigrade(event) {
   centigradeLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   document.querySelector("#current-temp").innerHTML = Math.round(centigrade);
+  document.querySelector("#feels-like").innerHTML =
+    Math.round(feelsLikeCentigrade);
 }
 function findFahrenheit(event) {
   event.preventDefault();
   centigradeLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheit = Math.round((centigrade * 9) / 5 + 32);
+  let feelsLikeFahrenheit = Math.round((feelsLikeCentigrade * 9) / 5 + 32);
   document.querySelector("#current-temp").innerHTML = fahrenheit;
+  document.querySelector("#feels-like").innerHTML = feelsLikeFahrenheit;
 }
 
 let dayTime = document.querySelector("#time-date");
@@ -97,6 +104,7 @@ searchForm.addEventListener("submit", cityFormSubmit);
 let nowWeatherButton = document.querySelector("#now-button");
 nowWeatherButton.addEventListener("click", findCurrentLocation);
 
+let feelsLikeCentigrade = null;
 let centigrade = null;
 let centigradeLink = document.querySelector("#centigrade");
 let fahrenheitLink = document.querySelector("#fahrenheit");
