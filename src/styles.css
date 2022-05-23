@@ -1,6 +1,10 @@
 body {
   font-family: "Josefin Sans", sans-serif;
 }
+footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
 .container {
   width: 100%;
   padding-right: 15px;
@@ -22,60 +26,89 @@ body {
   );
   color: white;
 }
-form {
-  margin-bottom: 30px;
+.search-form {
+  margin-bottom: 20px;
   color: black;
 }
 
-header .city {
-  margin-top: 25px;
-  font-weight: 900;
-  font-size: 60px;
-}
-header .sub-heading {
-  opacity: 0.8;
-}
-header #weather-icon {
-  display: block;
-  object-fit: contain;
-  margin: 20px auto;
-  max-width: 100%;
-  max-height: 100%;
-  text-align: center;
-}
-section .current-temp {
-  margin-top: -35px;
-  margin-bottom: 20px;
-  font-size: 90px;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-}
-
-section .centigrade-fahrenheit {
-  vertical-align: 200%;
-  color: white;
-  font-size: 18px;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: bold;
-}
-section .current-conditions {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-footer {
-  text-align: center;
-  margin-bottom: 20px;
-}
 .submit {
   background-color: white;
   border-radius: 60px;
   border-color: 0;
   border-style: outset;
+  transition: all 150ms ease-in-out;
 }
+
+.submit:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.now-button {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(0, 172, 245);
+  border-radius: 60px;
+  border-color: 0;
+  border-style: outset;
+}
+
+.city {
+  margin-top: 25px;
+  font-weight: 900;
+  font-size: 60px;
+}
+.sub-heading {
+  margin-top: -10px;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+.weather-icon {
+  display: block;
+  object-fit: contain;
+  margin: 20px auto;
+  max-width: 100%;
+  text-align: center;
+}
+.current-temp {
+  margin-top: -25px;
+  margin-bottom: 10px;
+  font-size: 90px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.current-weather .centigrade-fahrenheit {
+  vertical-align: 200%;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.current-weather #centigrade,
+#fahrenheit {
+  color: white;
+  font-weight: bold;
+}
+.current-weather .active {
+  text-decoration: none;
+  cursor: default;
+  opacity: 0.8;
+  transition: all 200ms ease-in-out;
+}
+
+.current-weather.active:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.current-conditions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .future-forecast {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .day-forecast {
   margin: auto 8px;
@@ -84,20 +117,4 @@ footer {
 }
 .day-forecast-emoji {
   font-size: 45px;
-}
-
-#weather-description {
-  text-transform: capitalize;
-}
-
-#centigrade,
-#fahrenheit {
-  color: white;
-  text-decoration: none;
-  transition: all 200ms ease-in-out;
-}
-
-#centigrade:hover,
-#fahrenheit:hover {
-  opacity: 0.8;
 }

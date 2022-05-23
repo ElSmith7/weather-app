@@ -31,7 +31,7 @@ function displayWeather(response) {
     response.data.main.humidity
   );
   document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
+    response.data.wind.speed * 3.6
   );
 
   document.querySelector("#weather-description").innerHTML =
@@ -76,10 +76,14 @@ function findCurrentLocation(event) {
 
 function findCentigrade(event) {
   event.preventDefault();
+  centigradeLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   document.querySelector("#current-temp").innerHTML = Math.round(centigrade);
 }
 function findFahrenheit(event) {
   event.preventDefault();
+  centigradeLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheit = Math.round((centigrade * 9) / 5 + 32);
   document.querySelector("#current-temp").innerHTML = fahrenheit;
 }
