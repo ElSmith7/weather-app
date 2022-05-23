@@ -1,4 +1,5 @@
-function showDateAndTime(currentDateAndTime) {
+function formatDate(timeStamp) {
+  let date = new Date(timeStamp);
   let days = [
     `Sunday`,
     `Monday`,
@@ -9,21 +10,26 @@ function showDateAndTime(currentDateAndTime) {
     `Saturday`,
   ];
 
-  let day = days[currentDateAndTime.getDay()];
-  let hours = currentDateAndTime.getHours();
-  let minutes = currentDateAndTime.getMinutes();
+  let day = days[date.getDay()];
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   if (hours < 10) {
     hours = `0${hours}`;
   }
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let time = `${hours}:${minutes}`;
-  return `${day} ${time}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 function displayWeather(response) {
   document.querySelector(".city").innerHTML = response.data.name;
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#time-date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
+
   centigrade = response.data.main.temp;
   document.querySelector("#current-temp").innerHTML = Math.round(centigrade);
 
@@ -36,9 +42,6 @@ function displayWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed * 3.6
   );
-
-  document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].description;
 
   document
     .querySelector("#weather-icon")
@@ -94,9 +97,6 @@ function findFahrenheit(event) {
   document.querySelector("#current-temp").innerHTML = fahrenheit;
   document.querySelector("#feels-like").innerHTML = feelsLikeFahrenheit;
 }
-
-let dayTime = document.querySelector("#time-date");
-dayTime.innerHTML = showDateAndTime(new Date());
 
 let searchForm = document.querySelector("#search-country-form");
 searchForm.addEventListener("submit", cityFormSubmit);
