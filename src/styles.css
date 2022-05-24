@@ -13,6 +13,7 @@ footer {
   margin-left: auto;
   box-sizing: border-box;
 }
+
 .weather-app {
   padding: 40px;
   margin: 20px auto;
@@ -25,12 +26,11 @@ footer {
   );
   color: white;
 }
-
 .dark-mode {
   background: linear-gradient(
     225deg,
-    rgba(60, 99, 120, 0.509) 10%,
-    rgb(11, 56, 86) 100%
+    rgba(102, 167, 202, 0.71) 10%,
+    rgb(1, 45, 112) 100%
   );
 }
 .search-form {
@@ -57,6 +57,10 @@ footer {
   border-radius: 60px;
   border-color: 0;
   border-style: outset;
+}
+
+.now-button-dark-mode {
+  background-color: rgb(1, 45, 112);
 }
 
 .city {

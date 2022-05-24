@@ -28,93 +28,86 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app" Id="background">
-      <form class="search-form" id="search-country-form">
-        <div class="row">
-          <div class="col-8">
-        <input
-        class="form-control shadow-sm"
-        id ="country-input"
-          type="search"
-          placeholder="Search City"
-          autocomplete="off"
-          />
+      <div class="weather-app" id="background">
+        <form class="search-form" id="search-country-form">
+          <div class="row">
+            <div class="col-8">
+              <input
+                class="form-control shadow-sm"
+                id="country-input"
+                type="search"
+                placeholder="Search City"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-2">
+              <input
+                class="form-control shadow-sm submit"
+                type="submit"
+                value="🔍"
+              />
+            </div>
+            <div class="col-2" id="now-button">
+              <button
+                type="button"
+                class="btn btn-primary shadow-sm now-button"
+              >
+                <span class="now-button-wrapper">Now</span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <header class="location-overveiw">
+          <div class="row">
+            <div class="col-6">
+              <h1 class="city"></h1>
+              <h6 class="sub-heading">
+                Last Updated:
+                <span id="time-date"></span>
+                <br />
+                <span id="weather-description"></span>
+              </h6>
+            </div>
+            <div class="col-6 weather-icon">
+              <img id="weather-icon" src="" alt="" />
+            </div>
+          </div>
+        </header>
+
+        <section class="current-weather">
+          <div class="row">
+            <div class="col-7 current-temp">
+              <span id="current-temp"></span>
+              <span class="centigrade-fahrenheit">
+                <a href="#" id="centigrade" class="active">°C </a>|
+                <a href="#" id="fahrenheit">°F</a></span
+              >
+            </div>
+            <div class="col-5">
+              <ul class="current-conditions">
+                <li>
+                  <strong>Feels Like: <span id="feels-like"></span>°</strong>
+                </li>
+                <li>
+                  <strong>Humidity: <span id="humidity"></span>%</strong>
+                </li>
+                <li>
+                  <strong>Wind: <span id="wind"></span>km/h</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="future-forecast" id="future-forecast"></section>
       </div>
-      <div class="col-2">
-        <input class="form-control shadow-sm submit" type="submit" value="🔍" />
-      </div>
-      <div class="col-2" id="now-button">
-        <button type="button" class="btn btn-primary shadow-sm now-button"><span class="now-button-wrapper">Now</span></button>
-      </div>
-    </div>
-    </form>
-
-      <header class="location-overveiw">
-        <div class="row">
-          <div class="col-6">
-            <h1 class="city"></h1>
-            <h6 class="sub-heading">
-              <span id="time-date"> </span>
-              <br />
-              <span id="weather-description"></span> 
-            </h6>
-          </div>
-          <div class="col-6 weather-icon">
-            <img id="weather-icon" src="" alt=""/>
-          </div>
-        </div>
-      </header>
-
-      <section class="current-weather">
-        <div class="row">
-          <div class="col-7 current-temp"><span id = current-temp></span>
-            <span class="centigrade-fahrenheit">
-              <a href="#" id="centigrade" class="active">°C </a>|
-            <a href="#" id="fahrenheit">°F</a></span>
-          </div>
-          <div class="col-5">
-            <ul class="current-conditions">
-              <li>
-                <strong>Feels Like:   <span id = "feels-like"></span>°</strong>
-              </li>
-              <li>
-            <strong >Humidity:   <span id="humidity"></span>%</strong>
-            </li>
-            <li>
-            <strong>Wind:   <span id="wind"></span>km/h</strong>
-        </li>
-          </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="future-forecast">
-        <div class="row">
-          <div class="d-flex justify-content-center">
-            <div class="col-2 day-forecast">
-              <p>Tus<div class="day-forecast-emoji">⛅</div>6°/16°</p>
-            </div>
-
-            <div class="col-2 day-forecast">
-              <p>Wed<div class="day-forecast-emoji">☀️</div>8°/18°</p>
-            </div>
-
-            <div class="col-2 day-forecast">
-              <p>Thu<div class="day-forecast-emoji">⛅</div>8°/15°</p>
-            </div>
-
-            <div class="col-2 day-forecast">
-              <p>Fri<div class="day-forecast-emoji">🌦️</div>5°/15°</p>
-            </div>
-
-            <div class="col-2 day-forecast">
-              <p>Sat<div class="day-forecast-emoji">🌧️</div>5°/12°</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      </div>
-    <footer><a href="https://github.com/ElSmith7/weather-app" target="_blank">Open-source Code</a> by Eleanor Smith</footer>
+      <footer>
+        <a href="https://github.com/ElSmith7/weather-app" target="_blank"
+          >Open-source Code</a
+        >
+        by Eleanor Smith
+      </footer>
     </div>
     <script src="src/script.js"></script>
   </body>

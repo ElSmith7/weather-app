@@ -23,9 +23,33 @@ function formatDate(timeStamp) {
   if (hours < 7 || hours > 20) {
     let background = document.querySelector("#background");
     background.classList.add("dark-mode");
+    nowWeatherButton.classList.add("now-button-dark-mode");
   }
 
   return `${day} ${hours}:${minutes}`;
+}
+
+function displayForecast() {
+  let forecast = document.querySelector("#future-forecast");
+  let forecastHTML = `<div class="row">
+            <div class="d-flex justify-content-center">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `      <div class="col-2 day-forecast">
+              <p>
+              <div id="forecast-date">${day}</div>
+              <div class="day-forecast-emoji" id="forecast-icon">⛅</div>
+              <span id="forecast-min">6°</span>/<span id="forecast-max">16°</span>
+              </p>
+          </div>`;
+  });
+  forecastHTML =
+    forecastHTML +
+    `</div>
+            </div>`;
+  forecast.innerHTML = forecastHTML;
 }
 
 function displayWeather(response) {
@@ -117,4 +141,5 @@ let fahrenheitLink = document.querySelector("#fahrenheit");
 centigradeLink.addEventListener("click", findCentigrade);
 fahrenheitLink.addEventListener("click", findFahrenheit);
 
+displayForecast();
 searchCity(`London`);
