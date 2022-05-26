@@ -29,7 +29,7 @@ function formatDate(timeStamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecast = document.querySelector("#future-forecast");
   let forecastHTML = `<div class="row">
             <div class="d-flex justify-content-center">`;
@@ -50,6 +50,13 @@ function displayForecast() {
     `</div>
             </div>`;
   forecast.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = `5c32603554bdbae2e57c8722d88e7625`;
+  let unit = `metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=${unit}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeather(response) {
@@ -82,6 +89,8 @@ function displayWeather(response) {
   document
     .querySelector("#weather-icon")
     .setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -141,5 +150,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit");
 centigradeLink.addEventListener("click", findCentigrade);
 fahrenheitLink.addEventListener("click", findFahrenheit);
 
-displayForecast();
 searchCity(`London`);
