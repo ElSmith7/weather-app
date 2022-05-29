@@ -75,10 +75,9 @@ footer {
 }
 .weather-icon {
   display: block;
-  object-fit: contain;
   margin: 20px auto;
+  width: 130px;
   max-width: 100%;
-  text-align: center;
 }
 .current-temp {
   margin-top: -25px;
@@ -125,7 +124,4 @@ footer {
   margin: auto 8px;
   font-size: 18px;
   font-weight: 800;
-}
-.day-forecast-emoji {
-  font-size: 45px;
 }
