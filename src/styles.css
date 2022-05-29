@@ -87,29 +87,6 @@ footer {
   font-weight: 600;
 }
 
-.current-weather .centigrade-fahrenheit {
-  vertical-align: 200%;
-  font-size: 18px;
-  font-family: "Josefin Sans", sans-serif;
-}
-
-.current-weather #centigrade,
-#fahrenheit {
-  color: white;
-  font-weight: bold;
-}
-.current-weather .active {
-  text-decoration: none;
-  cursor: default;
-  opacity: 0.8;
-  transition: all 200ms ease-in-out;
-}
-
-.current-weather.active:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-
 .current-conditions {
   list-style: none;
   padding: 0;

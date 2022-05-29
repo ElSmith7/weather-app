@@ -43,7 +43,7 @@ function displayForecast(response) {
             <div class="d-flex justify-content-center">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index > 0 && index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `      <div class="col-2 day-forecast">
@@ -115,6 +115,11 @@ function searchCity(city) {
   let unit = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeather);
+  if (city === "") {
+    document
+      .querySelector("#country-input")
+      .setAttribute("placeholder", "Please enter a valid city");
+  }
 }
 
 function cityFormSubmit(event) {
@@ -136,35 +141,10 @@ function findCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function findCentigrade(event) {
-  event.preventDefault();
-  centigradeLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  document.querySelector("#current-temp").innerHTML = Math.round(centigrade);
-  document.querySelector("#feels-like").innerHTML =
-    Math.round(feelsLikeCentigrade);
-}
-function findFahrenheit(event) {
-  event.preventDefault();
-  centigradeLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheit = Math.round((centigrade * 9) / 5 + 32);
-  let feelsLikeFahrenheit = Math.round((feelsLikeCentigrade * 9) / 5 + 32);
-  document.querySelector("#current-temp").innerHTML = fahrenheit;
-  document.querySelector("#feels-like").innerHTML = feelsLikeFahrenheit;
-}
-
 let searchForm = document.querySelector("#search-country-form");
 searchForm.addEventListener("submit", cityFormSubmit);
 
 let nowWeatherButton = document.querySelector("#now-button");
 nowWeatherButton.addEventListener("click", findCurrentLocation);
-
-let feelsLikeCentigrade = null;
-let centigrade = null;
-let centigradeLink = document.querySelector("#centigrade");
-let fahrenheitLink = document.querySelector("#fahrenheit");
-centigradeLink.addEventListener("click", findCentigrade);
-fahrenheitLink.addEventListener("click", findFahrenheit);
 
 searchCity(`London`);
