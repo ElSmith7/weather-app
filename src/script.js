@@ -49,11 +49,11 @@ function displayForecast(response) {
         `      <div class="col-2 day-forecast">
               <p>
               <div id="forecast-date">${formatFutureDay(forecastDay.dt)}</div>
-              <img src="http://openweathermap.org/img/wn/${
+              <img class="img-fluid" src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
               }@2x.png" alt="" width="70"/>
                
-              <div><span id="forecast-min">${Math.round(
+              <div class="min-max"><span id="forecast-min">${Math.round(
                 forecastDay.temp.min
               )}°</span> / <span id="forecast-max">${Math.round(
           forecastDay.temp.max

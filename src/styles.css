@@ -110,3 +110,75 @@ footer {
   font-size: 18px;
   font-weight: 800;
 }
+
+@media (max-width: 450px) {
+  footer {
+    margin-top: -10px;
+    font-size: 12px;
+  }
+  .weather-app {
+    padding: 25px;
+  }
+  .search-form {
+    margin: 0 0 10px 0;
+    color: black;
+  }
+  .now-button {
+    margin: 0;
+  }
+  .city {
+    margin-top: 15px;
+    font-size: 50px;
+  }
+  .sub-heading {
+    opacity: 0.8;
+    text-transform: capitalize;
+    font-size: 10px;
+  }
+
+  .weather-icon {
+    display: block;
+    margin: 50px auto 0;
+  }
+  .current-temp {
+    font-size: 80px;
+    margin-top: -60px;
+    padding-left: 30px;
+  }
+  .unit {
+    vertical-align: 150%;
+    margin-left: -10px;
+    font-size: 16px;
+  }
+  .current-conditions {
+    list-style: none;
+    padding: 0;
+    margin: -10px 0 0 0;
+    font-size: 12px;
+  }
+  .future-forecast {
+    margin-top: -15;
+  }
+  .min-max {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 280px) {
+  .city {
+    font-size: 45px;
+  }
+  .current-temp {
+    margin-top: -30px;
+    padding-left: 10px;
+    font-size: 70px;
+  }
+  .current-conditions {
+    font-size: 12px;
+    margin-left: -15px;
+    margin-top: -2px;
+  }
+  .future-forecast {
+    margin-top: -10px;
+  }
+}

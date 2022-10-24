@@ -24,6 +24,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/09a51149e7.js"
+      crossorigin="anonymous"
+    ></script>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
@@ -40,7 +45,7 @@
                 autocomplete="off"
               />
             </div>
-            <div class="col-2">
+            <div class="col-2 d-none d-md-block">
               <input
                 class="form-control shadow-sm submit"
                 type="submit"
@@ -53,7 +58,9 @@
                 class="btn btn-primary shadow-sm now-button"
                 id="now-button"
               >
-                <span class="now-button-wrapper">Now</span>
+                <span class="now-button-wrapper"
+                  ><i class="fa-solid fa-location-dot"></i
+                ></span>
               </button>
             </div>
           </div>
@@ -71,7 +78,12 @@
               </h6>
             </div>
             <div class="col-6">
-              <img class="weather-icon" id="weather-icon" src="" alt="" />
+              <img
+                class="weather-icon img-fluid"
+                id="weather-icon"
+                src=""
+                alt=""
+              />
             </div>
           </div>
         </header>
@@ -80,7 +92,7 @@
           <div class="row">
             <div class="col-7 current-temp">
               <span id="current-temp"></span>
-              <span class="unit" id="unit"> °C</span>
+              <span class="unit d-none d-sm-inline" id="unit"> °C</span>
             </div>
             <div class="col-5">
               <ul class="current-conditions">
