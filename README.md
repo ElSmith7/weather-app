@@ -1,4 +1,4 @@
-# Portfolio Project
+# Weather App
 
 A weather app which displays a five-day weather forecast for a specific location.
 
