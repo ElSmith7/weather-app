@@ -133,7 +133,8 @@ footer {
   }
   .city {
     margin-top: 15px;
-    font-size: 50px;
+    line-height: normal;
+    font-size: 45px;
   }
   .sub-heading {
     opacity: 0.8;
@@ -147,7 +148,7 @@ footer {
   }
   .current-temp {
     font-size: 80px;
-    margin-top: -60px;
+    margin-top: -50px;
     padding-left: 30px;
   }
   .unit {
@@ -171,12 +172,15 @@ footer {
 
 @media (max-width: 280px) {
   .city {
-    font-size: 45px;
+    font-size: 35px;
+  }
+  .sub-heading {
+    font-size: 8px;
   }
   .current-temp {
     margin-top: -30px;
     padding-left: 10px;
-    font-size: 70px;
+    font-size: 60px;
   }
   .current-conditions {
     font-size: 12px;
